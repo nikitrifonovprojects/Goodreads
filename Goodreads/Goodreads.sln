@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goodreads", "Goodreads\Goodreads.csproj", "{CFCC4099-6263-44AE-B5EE-EB1A8B3A88A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goodreads.Data", "Goodreads.Data\Goodreads.Data.csproj", "{D8C4B8F7-1D61-43CB-9B72-5E3192FF6F73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CFCC4099-6263-44AE-B5EE-EB1A8B3A88A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFCC4099-6263-44AE-B5EE-EB1A8B3A88A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFCC4099-6263-44AE-B5EE-EB1A8B3A88A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8C4B8F7-1D61-43CB-9B72-5E3192FF6F73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8C4B8F7-1D61-43CB-9B72-5E3192FF6F73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8C4B8F7-1D61-43CB-9B72-5E3192FF6F73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8C4B8F7-1D61-43CB-9B72-5E3192FF6F73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
