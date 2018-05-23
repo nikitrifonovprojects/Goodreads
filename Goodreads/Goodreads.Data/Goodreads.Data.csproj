@@ -103,13 +103,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GoordeadsContext.cs" />
+    <Compile Include="Models\Books.cs" />
+    <Compile Include="Models\Genres.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
