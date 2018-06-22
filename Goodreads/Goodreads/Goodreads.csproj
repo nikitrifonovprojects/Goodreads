@@ -18,4 +18,8 @@
     <ProjectReference Include="..\Goodreads.Data\Goodreads.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\lib\" />
+  </ItemGroup>
+
 </Project>

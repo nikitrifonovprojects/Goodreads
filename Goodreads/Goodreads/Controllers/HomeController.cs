@@ -10,9 +10,11 @@ namespace Goodreads.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Login(string name, string password)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Login(LoginModel loginModel)
         {
-            return View();
+            return RedirectToAction(nameof(Index));
         }
 
         public IActionResult Index()
