@@ -24,26 +24,33 @@
             <div class="navbar-header">
                 <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Goodreads</a>
             </div>
-            <form class="form-inline" asp-controller="Home" asp-action="Login" method="post">
+            <form asp-controller="Home" asp-action="Login" method="post">
                 <div class="form-row">
-                    <div class="form-group">
+                    <div class="col-5">
                         <div class="align-content-sm-end">
-                            <input type="email" name="email" class="form-control-sm is-invalid" id="validationemail" placeholder="Email Address" required />
+                            <input type="email" asp-for="Email" class="form-control-sm is-invalid" id="validationemail" placeholder="Email Address" required />
                         </div>
                     </div>
-                    <div class="form-group">
-                        <div class="col">
-                            <input type="password" name="password" class="form-control-sm is-invalid" id="validationpassword" placeholder="Password" required />
+                    <div class="col-5">
+                        <div>
+                            <input type="password" asp-for="Password" class="form-control-sm is-invalid" id="validationpassword" placeholder="Password" required />
                         </div>
                     </div>
                     <div class="col">
                         <button type="submit" class="btn-sm btn">Sign In</button>
                     </div>
-                    <div class="form-check col-sm-3">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked>
-                        <label class="form-check-label" for="defaultCheck1">
-                            <small class="text-muted">Remmember me</small>
-                        </label>
+                </div>
+                <div class="form-row">
+                    <div class="col-5">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" asp-for="RemmemberMe" id="check" checked>
+                            <label class="form-check-label" for="check">
+                                <small class="text-muted">Remmember me</small>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <a asp-controller="Home" asp-action="ForgottenPassword"><small class="text-muted">Forgot it?</small></a>
                     </div>
                 </div>
             </form>

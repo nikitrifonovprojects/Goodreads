@@ -22,6 +22,12 @@ namespace Goodreads.Controllers
             return View();
         }
 
+        public IActionResult ForgottenPassword()
+        {
+            this.ViewData["Message"] = "Reset your password";
+            return View();
+        }
+
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
