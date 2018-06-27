@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Identity;
+using Goodreads.Data.Models;
+using Microsoft.Extensions.Logging;
 
 namespace Goodreads
 {
@@ -15,7 +18,7 @@ namespace Goodreads
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            this.Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
@@ -23,14 +26,21 @@ namespace Goodreads
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<GoodreadsDbContext>()
+                .AddDefaultTokenProviders();
+
             services.AddMvc();
 
-            services.AddDbContext<GoodreadsContext>(options => options.UseSqlServer(this.Configuration.GetConnectionString("GoodreadsConnection")));
+            services.AddDbContext<GoodreadsDbContext>(options => options.UseSqlServer(this.Configuration.GetConnectionString("GoodreadsConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddConsole(this.Configuration.GetSection("Logging"));
+            loggerFactory.AddDebug();
+
             if (env.IsDevelopment())
             {
                 app.UseBrowserLink();
@@ -42,6 +52,15 @@ namespace Goodreads
             }
 
             app.UseStaticFiles();
+            app.UseAuthentication();
+
+            app.UseCors(builder =>
+            {
+                builder.AllowAnyHeader();
+                builder.AllowAnyMethod();
+                builder.AllowAnyOrigin();
+            }
+);
 
             app.UseMvc(routes =>
             {

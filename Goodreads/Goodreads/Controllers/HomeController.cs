@@ -12,7 +12,7 @@ namespace Goodreads.Controllers
     {
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Login(LoginModel loginModel)
+        public IActionResult Login(LoginViewModel loginModel)
         {
             return RedirectToAction(nameof(Index));
         }

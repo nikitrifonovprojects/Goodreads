@@ -1,29 +1,30 @@
-﻿@{
+﻿@model RegisterViewModel
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="jumbotron" style="background:url(https://s.gr-assets.com/assets/home/masthead_background.jpg)">
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col-8">
                 <img src="https://s.gr-assets.com/assets/home/headline-e2cd420e71737ff2815d09af5b65c4e4.png" alt="Alternate Text" />
             </div>
-            <div class="col-5">
-                <form action="/" method="post">
-                    <h4>New here? Create a free account!</h4>
+            <div class="col-4">
+                <form asp-controller="Account" asp-action="Register" method="post">
+                    <h6>New here? Create a free account!</h6>
                     <div class="form-group row">
                         <div class="col">
-                            <input type="text" class="form-control" name="name" placeholder="Name" required />
+                            <input type="text" class="form-control" asp-for="Name" placeholder="Name" required />
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col">
-                            <input type="text" class="form-control" name="name" placeholder="Email Address" required />
+                            <input type="email" class="form-control" asp-for="Email" placeholder="Email Address" required />
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col">
-                            <input type="text" class="form-control" name="name" placeholder="Password" required />
+                            <input type="password" class="form-control" asp-for="Password" placeholder="Password" required />
                         </div>
                     </div>
                     <div class="form-group row">
@@ -31,7 +32,7 @@
                             <button type="submit" class="btn btn-primary">Sign Up</button>
                         </div>
                         <div class="col">
-                            <small class="text-muted float-left">
+                            <small class="text-muted float-sm-left" style="font-size:10px; line-height:12px;">
                                 By clicking “Sign up” I agree to the Goodreads Terms of Service and confirm that I am at least 13 years old.
                             </small>
                         </div>
@@ -43,27 +44,238 @@
 </div>
 <div class="card-columns">
     <div class="card">
-        <div class="card-text">
-            Deciding what to read next?
-        </div>
         <div class="card-body">
-            You’re in the right place. Tell us what titles or genres you’ve enjoyed in the past, and we’ll give you surprisingly insightful recommendations.
+            <h5 class="card-title">Deciding what to read next?</h5>
+            <p class="card-text">You’re in the right place. Tell us what titles or genres you’ve enjoyed in the past, and we’ll give you surprisingly insightful recommendations.</p>
         </div>
     </div>
     <div class="card">
-        <div class="card-text">
-            What are your friends reading?
-        </div>
         <div class="card-body">
-            Chances are your friends are discussing their favorite (and least favorite) books on Goodreads.
+            <h5 class="card-title">What are your friends reading?</h5>
+            <p class="card-text">Chances are your friends are discussing their favorite (and least favorite) books on Goodreads.</p>
         </div>
     </div>
     <div class="card">
-        <div class="card-text">
-            Love lists?
-        </div>
         <div class="card-body">
-            List of books
+            <div class="row">
+                <ul class="list-group">
+                    <li class="list-inline-item">
+                        <a href="#">Best Crime & Mystery Books</a>
+                        <span>
+                            <a href="#">
+                                <img src="https://images.gr-assets.com/books/1386605169s/17899948.jpg" class="img-fluid" style="width:8%;" alt="Alternate Text" />
+                            </a>
+                            <a href="#">
+                                <img src="https://images.gr-assets.com/books/1327868566s/2429135.jpg" class="img-fluid" style="width:8%;" alt="Alternate Text" />
+                            </a>
+                            <a href="#">
+                                <img src="https://images.gr-assets.com/books/1391120695s/16299.jpg" class="img-fluid" style="width:8%;" alt="Alternate Text" />
+                            </a>
+                            <a href="#">
+                                <img src="https://images.gr-assets.com/books/1527091700s/960.jpg" class="img-fluid" style="width:8%;" alt="Alternate Text" />
+                            </a>
+                        </span>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#">Best Crime & Mystery Books</a>
+                        <span>
+                            <a href="#">
+                                <img src="https://images.gr-assets.com/books/1386605169s/17899948.jpg" class="img-fluid" style="width:8%;" alt="Alternate Text" />
+                            </a>
+                            <a href="#">
+                                <img src="https://images.gr-assets.com/books/1327868566s/2429135.jpg" class="img-fluid" style="width:8%;" alt="Alternate Text" />
+                            </a>
+                            <a href="#">
+                                <img src="https://images.gr-assets.com/books/1391120695s/16299.jpg" class="img-fluid" style="width:8%;" alt="Alternate Text" />
+                            </a>
+                            <a href="#">
+                                <img src="https://images.gr-assets.com/books/1527091700s/960.jpg" class="img-fluid" style="width:8%;" alt="Alternate Text" />
+                            </a>
+                        </span>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#">More book lists</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
+<div class="row">
+    <div class="col-8">
+        <div class="jumbotron">
+            <h5>What will you discover?</h5>
+            <div class="list">
+                <div class="list-inline-item">
+                    <p><small>Because Brian liked…</small></p>
+                    <a href="#">
+                        <img src="https://images.gr-assets.com/books/1480106986m/33917.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
+                    </a>
+                    <a href="#">
+                        <img src="https://images.gr-assets.com/books/1320562005m/4214.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
+                    </a>
+                    <a href="#">
+                        <img src="https://images.gr-assets.com/books/1406383769m/49628.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
+                    </a>
+                    <a href="#">
+                        <img src="https://images.gr-assets.com/books/1479863624m/1618.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
+                    </a>
+                </div>
+                <div class="list-inline-item">
+                    <img src="https://s.gr-assets.com/assets/home/discovery_arrow.png" alt="Alternate Text" />
+                </div>
+                <div class="list-inline-item">
+                    <p><small>He discovered:</small></p>
+                    <a href="#">
+                        <img src="https://images.gr-assets.com/books/1329421639m/50365.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
+                    </a>
+                </div>
+            </div>
+            <br />
+            <div class="list">
+                <div class="list-inline-item">
+                    <p><small>Because Shomeret liked…</small></p>
+                    <a href="#">
+                        <img src="https://images.gr-assets.com/books/1480106986m/33917.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
+                    </a>
+                    <a href="#">
+                        <img src="https://images.gr-assets.com/books/1320562005m/4214.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
+                    </a>
+                    <a href="#">
+                        <img src="https://images.gr-assets.com/books/1406383769m/49628.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
+                    </a>
+                    <a href="#">
+                        <img src="https://images.gr-assets.com/books/1479863624m/1618.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
+                    </a>
+                </div>
+                <div class="list-inline-item">
+                    <img src="https://s.gr-assets.com/assets/home/discovery_arrow.png" alt="Alternate Text" />
+                </div>
+                <div class="list-inline-item">
+                    <p><small>She discovered:</small></p>
+                    <a href="#">
+                        <img src="https://images.gr-assets.com/books/1329421639m/50365.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Are you an author or a publisher? </h5>
+                <p class="card-text">Gain access to a massive audience of more than 75 million book lovers. Goodreads is a great place to promote your books. </p>
+                <button class="btn btn-sm">Author program</button>
+                <button class="btn btn-sm">Advertise</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container float-left w-75">
+    <h5>Search and browse books</h5>
+    <div class="input-group" style="width:350px;">
+        <input type="text" class="form-control" id="search" placeholder="Title / Author / ISBN"/>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-sm">
+            <div class="row">
+                <a href="#">Art</a>
+            </div>
+            <div class="row">
+                <a href="#">Biography</a>
+            </div>
+            <div class="row">
+                <a href="#">Business</a>
+            </div>
+            <div class="row">
+                <a href="#">Children's</a>
+            </div>
+            <div class="row">
+                <a href="#">Christian</a>
+            </div>
+            <div class="row">
+                <a href="#">Classics</a>
+            </div>
+            <div class="row">
+                <a href="#">Comics</a>
+            </div>
+            <div class="row">
+                <a href="#">Cookbooks</a>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="row">
+                <a href="#">Ebooks</a>
+            </div>
+            <div class="row">
+                <a href="#">Fantasy</a>
+            </div>
+            <div class="row">
+                <a href="#">Fiction</a>
+            </div>
+            <div class="row">
+                <a href="#">Graphic Novels</a>
+            </div>
+            <div class="row">
+                <a href="#">Historical Fiction</a>
+            </div>
+            <div class="row">
+                <a href="#">History</a>
+            </div>
+            <div class="row">
+                <a href="#">Horror</a>
+            </div>
+            <div class="row">
+                <a href="#">Memoir</a>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="row">
+                <a href="#">Music</a>
+            </div>
+            <div class="row">
+                <a href="#">Mystery</a>
+            </div>
+            <div class="row">
+                <a href="#">Nonfiction</a>
+            </div>
+            <div class="row">
+                <a href="#">Poetry</a>
+            </div>
+            <div class="row">
+                <a href="#">Psychology</a>
+            </div>
+            <div class="row">
+                <a href="#">Romance</a>
+            </div>
+            <div class="row">
+                <a href="#">Science</a>
+            </div>
+            <div class="row">
+                <a href="#">Science Fiction</a>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="row">
+                <a href="#">Self Help</a>
+            </div>
+            <div class="row">
+                <a href="#">Sports</a>
+            </div>
+            <div class="row">
+                <a href="#">Thriller</a>
+            </div>
+            <div class="row">
+                <a href="#">Travel</a>
+            </div>
+            <div class="row">
+                <a href="#">Young Adult</a>
+            </div>
+            <div class="row">
+                <a href="#">More genres</a>
+            </div>
+        </div>
+    </div>
+</div>
+

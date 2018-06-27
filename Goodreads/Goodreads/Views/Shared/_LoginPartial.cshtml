@@ -1,0 +1,61 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Goodreads.Data.Models
+
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+@model LoginViewModel
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <form asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
+        <ul class="navbar navbar-light bg-transparent">
+            <li class="nav-item">
+                <a class="nav-link" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+            </li>
+            <li class="nav-item">
+                <button type="submit" class="btn btn-link navbar-btn nav-link">Log out</button>
+            </li>
+        </ul>
+    </form>
+}
+else
+{
+    <div class="navbar navbar-right bg-transparent">
+        <form asp-controller="Account" asp-action="Login" method="post">
+            <div class="form-row">
+                <div class="col-5">
+                    <div class="align-content-sm-end">
+                        <input type="email" asp-for="Email" class="form-control-sm is-invalid" id="validationemail" placeholder="Email Address" required />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div>
+                        <input type="password" asp-for="Password" class="form-control-sm is-invalid" id="validationpassword" placeholder="Password" required />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn-sm btn">Sign In</button>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-5">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" asp-for="RemmemberMe" id="check" checked>
+                        <label class="form-check-label" for="check">
+                            <small class="text-muted">Remmember me</small>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <a asp-controller="Home" asp-action="ForgottenPassword"><small class="text-muted">Forgot it?</small></a>
+                </div>
+            </div>
+        </form>
+    </div>
+    @section Scripts {
+        @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    }
+}
