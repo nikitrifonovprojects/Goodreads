@@ -27,12 +27,12 @@ namespace Goodreads
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddIdentity<User, IdentityRole>()
-                .AddEntityFrameworkStores<GoodreadsDbContext>()
+                .AddEntityFrameworkStores<GoodreadsContext>()
                 .AddDefaultTokenProviders();
 
             services.AddMvc();
 
-            services.AddDbContext<GoodreadsDbContext>(options => options.UseSqlServer(this.Configuration.GetConnectionString("GoodreadsConnection")));
+            services.AddDbContext<GoodreadsContext>(options => options.UseSqlServer(this.Configuration.GetConnectionString("GoodreadsConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

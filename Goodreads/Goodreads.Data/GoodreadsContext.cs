@@ -1,11 +1,12 @@
 ﻿using Goodreads.Data.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Goodreads.Data
 {
-    public class GoodreadsContext : DbContext
+    public class GoodreadsContext : IdentityUserContext<User>
     {
-        public GoodreadsContext(DbContextOptions options) 
+        public GoodreadsContext(DbContextOptions options)
             : base(options)
         {
         }
@@ -23,7 +24,5 @@ namespace Goodreads.Data
         public DbSet<Pictures> Pictures { get; set; }
 
         public DbSet<Rating> Ratings { get; set; }
-
-        public DbSet<User> Users { get; set; }
     }
 }
