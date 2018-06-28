@@ -15,15 +15,6 @@ namespace Goodreads.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            //builder.Ignore<IdentityUserLogin<string>>();
-            //builder.Ignore<IdentityUserRole<string>>();
-            //builder.Ignore<IdentityUserClaim<string>>();
-            //builder.Ignore<IdentityUserToken<string>>();
-            //builder.Ignore<IdentityUser<string>>();
-            //builder.Ignore<User>();
-            // Customize the ASP.NET Identity model and override the defaults if needed.
-            // For example, you can rename the ASP.NET Identity table names and more.
-            // Add your customizations after calling base.OnModelCreating(builder);
         }
 
         public DbSet<Authors> Authors { get; set; }

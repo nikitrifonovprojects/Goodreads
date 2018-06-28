@@ -38,11 +38,12 @@ namespace Goodreads.Controllers
             this.ViewData["ReturnUrl"] = returnUrl;
             if (this.ModelState.IsValid)
             {
-                var result = await this.signManager.PasswordSignInAsync(model.Email, model.Password, model.RemmemberMe, lockoutOnFailure: false);
+                var user = await this.userManager.FindByEmailAsync(model.Email);
+                var result = await this.signManager.PasswordSignInAsync(user, model.Password, model.RemmemberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
                     this.logger.LogInformation(1, "User logged in.");
-                    return LocalRedirect(returnUrl);
+                    return RedirectToLocal(returnUrl);
                 }
                 if (result.RequiresTwoFactor)
                 {

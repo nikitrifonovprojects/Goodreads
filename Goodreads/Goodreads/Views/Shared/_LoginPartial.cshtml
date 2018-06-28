@@ -9,20 +9,20 @@
 @if (SignInManager.IsSignedIn(User))
 {
     <form asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
-        <ul class="navbar navbar-light bg-transparent">
-            <li class="nav-item">
-                <a class="nav-link" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
-            </li>
-            <li class="nav-item">
-                <button type="submit" class="btn btn-link navbar-btn nav-link">Log out</button>
-            </li>
-        </ul>
+        <div class="navbar navbar-light bg-transparent">
+            <div class="nav-item">
+                <a class="badge badge-pill" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+            </div>
+            <div class="nav-item">
+                <button type="submit" class="btn btn-link navbar-btn nav-link"><small>Log out</small></button>
+            </div>
+        </div>
     </form>
 }
 else
 {
     <div class="navbar navbar-right bg-transparent">
-        <form asp-controller="Account" asp-action="Login" method="post">
+        <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
             <div class="form-row">
                 <div class="col-5">
                     <div class="align-content-sm-end">
