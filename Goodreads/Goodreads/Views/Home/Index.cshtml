@@ -3,13 +3,21 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="jumbotron bg-transparent">
-    <div class="container">
+<div class="container-fluid container-nav">
+    <nav class="navbar navbar-light  bg-transparent">
+        <div class="container">
+            <a asp-area="" asp-controller="Home" asp-action="Index">
+                <img src="https://s.gr-assets.com/assets/home/header_logo-8d96d7078a3d63f9f31d92282fd67cf4.png" alt="Goodreads" />
+            </a>
+            @await Html.PartialAsync("_LoginPartial")
+        </div>
+    </nav>
+    <div class="jumbotron bg-transparent">
         <div class="row">
-            <div class="col-8">
-                <img src="https://s.gr-assets.com/assets/home/headline-e2cd420e71737ff2815d09af5b65c4e4.png" alt="Alternate Text" />
+            <div class="col-md-3 offset-3">
+                <img src="https://s.gr-assets.com/assets/home/headline-e2cd420e71737ff2815d09af5b65c4e4.png" alt="Meet your next favorite book" />
             </div>
-            <div class="col-4">
+            <div class="col-md-3 col-md-3">
                 <form asp-controller="Account" asp-action="Register" method="post">
                     <h6>New here? Create a free account!</h6>
                     <div asp-validation-summary="All" class="text-danger"></div>
@@ -282,4 +290,3 @@
         </div>
     </div>
 </div>
-
