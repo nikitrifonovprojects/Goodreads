@@ -9,24 +9,65 @@
     padding-right: 15px;
 }
 
-.navbar{
 
-}
-
-.jumbotron {
-    padding: 0;
-}
-
-.row {
-}
-
-.col-md-3 {
-}
-
-.container-fluid {
-    height: 370px;
+#navigation {
     background-image: url("https://s.gr-assets.com/assets/home/masthead_background.jpg");
-     
+}
+
+.very-small {
+    font-size: 0.5rem;
+}
+
+#meetbook {
+    padding-top: 3rem;
+    color: #754827;
+}
+
+#item-account {
+    padding-top: 2.5rem;
+}
+
+.text-big {
+    font-size: 4rem;
+    font-weight: bolder;
+    line-height: 3rem;
+}
+
+#signinbutton {
+    background-color: #382110;
+    border: 1px solid #382110;
+    color: white;
+}
+
+#signupbutton {
+    background-color: #fdd05f;
+    font-weight: 600;
+    color: #333333;
+    border: hidden
+}
+
+.card{
+    border: none;
+}
+
+
+.card-text {
+    font-size: small;
+    font-weight: 500;
+}
+
+#list-title {
+    color: #00635d;
+    font-size: 15px;
+}
+
+#img-list-item {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#card-list {
+    padding-left: 0;
 }
 /* QR code generator */
 #qrCode {

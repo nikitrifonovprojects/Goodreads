@@ -1,52 +1,54 @@
 ﻿@model RegisterViewModel
+
 @{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="container-fluid container-nav">
-    <nav class="navbar navbar-light  bg-transparent">
-        <div class="container">
-            <a asp-area="" asp-controller="Home" asp-action="Index">
-                <img src="https://s.gr-assets.com/assets/home/header_logo-8d96d7078a3d63f9f31d92282fd67cf4.png" alt="Goodreads" />
+<div id="navigation">
+    <div class="container">
+        <div class="navbar navbar-expand-lg navbar-light bg-transparent">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                <img class="offset-md-4" src="https://s.gr-assets.com/assets/home/header_logo-8d96d7078a3d63f9f31d92282fd67cf4.png" alt="Goodreads" />
             </a>
-            @await Html.PartialAsync("_LoginPartial")
-        </div>
-    </nav>
-    <div class="jumbotron bg-transparent">
-        <div class="row">
-            <div class="col-md-3 offset-3">
-                <img src="https://s.gr-assets.com/assets/home/headline-e2cd420e71737ff2815d09af5b65c4e4.png" alt="Meet your next favorite book" />
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                @await Html.PartialAsync("_LoginPartial")
             </div>
-            <div class="col-md-3 col-md-3">
-                <form asp-controller="Account" asp-action="Register" method="post">
+        </div>
+        <div class="row">
+            <div class="col-md-7">
+                <div id="meetbook" class="offset-md-3">
+                    <p class="text-big">Meet your next</p>
+                    <p class="text-big">favorite book.</p>
+                </div>
+            </div>
+            <div id="item-account" class="col-md-5">
+                <form class="col-md-8 offset-md-1" asp-controller="Account" asp-action="Register" id="loginform" method="post">
                     <h6>New here? Create a free account!</h6>
-                    <div asp-validation-summary="All" class="text-danger"></div>
-                    <div class="form-group row">
-                        <div class="col">
-                            <input type="text" class="form-control" asp-for="Name" placeholder="Name" required />
-                            <span asp-validation-for="Name" class="text-danger"></span>
-                        </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" asp-for="Name" placeholder="Name" required />
+                        <span asp-validation-for="Name" class="text-danger"></span>
                     </div>
-                    <div class="form-group row">
-                        <div class="col">
-                            <input type="email" class="form-control" asp-for="Email" placeholder="Email Address" required />
-                            <span asp-validation-for="Email" class="text-danger"></span>
-                        </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" asp-for="Email" placeholder="Email Address" required />
+                        <span asp-validation-for="Email" class="text-danger"></span>
                     </div>
-                    <div class="form-group row">
-                        <div class="col">
-                            <input type="password" class="form-control" asp-for="Password" placeholder="Password" required />
-                            <span asp-validation-for="Password" class="text-danger"></span>
-                        </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" asp-for="Password" placeholder="Password" required />
+                        <span asp-validation-for="Password" class="text-danger"></span>
                     </div>
-                    <div class="form-group row">
-                        <div class="col">
-                            <button type="submit" class="btn btn-primary">Sign Up</button>
-                        </div>
-                        <div class="col">
-                            <small class="text-muted float-sm-left" style="font-size:10px; line-height:12px;">
-                                By clicking “Sign up” I agree to the Goodreads Terms of Service and confirm that I am at least 13 years old.
-                            </small>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <button type="submit" class="btn btn-dark" id="signupbutton">Sign Up</button>
+                            </div>
+                            <div class="col-md-8">
+                                <p class="very-small">
+                                    By clicking “Sign up” I agree to the Goodreads Terms of Service and confirm that I am at least 13 years old.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -54,238 +56,200 @@
         </div>
     </div>
 </div>
-<div class="card-columns">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">Deciding what to read next?</h5>
-            <p class="card-text">You’re in the right place. Tell us what titles or genres you’ve enjoyed in the past, and we’ll give you surprisingly insightful recommendations.</p>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">What are your friends reading?</h5>
-            <p class="card-text">Chances are your friends are discussing their favorite (and least favorite) books on Goodreads.</p>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-body">
-            <div class="row">
-                <ul class="list-group">
-                    <li class="list-inline-item">
-                        <a href="#">Best Crime & Mystery Books</a>
-                        <span>
-                            <a href="#">
-                                <img src="https://images.gr-assets.com/books/1386605169s/17899948.jpg" class="img-fluid" style="width:8%;" alt="Alternate Text" />
-                            </a>
-                            <a href="#">
-                                <img src="https://images.gr-assets.com/books/1327868566s/2429135.jpg" class="img-fluid" style="width:8%;" alt="Alternate Text" />
-                            </a>
-                            <a href="#">
-                                <img src="https://images.gr-assets.com/books/1391120695s/16299.jpg" class="img-fluid" style="width:8%;" alt="Alternate Text" />
-                            </a>
-                            <a href="#">
-                                <img src="https://images.gr-assets.com/books/1527091700s/960.jpg" class="img-fluid" style="width:8%;" alt="Alternate Text" />
-                            </a>
-                        </span>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="#">Best Crime & Mystery Books</a>
-                        <span>
-                            <a href="#">
-                                <img src="https://images.gr-assets.com/books/1386605169s/17899948.jpg" class="img-fluid" style="width:8%;" alt="Alternate Text" />
-                            </a>
-                            <a href="#">
-                                <img src="https://images.gr-assets.com/books/1327868566s/2429135.jpg" class="img-fluid" style="width:8%;" alt="Alternate Text" />
-                            </a>
-                            <a href="#">
-                                <img src="https://images.gr-assets.com/books/1391120695s/16299.jpg" class="img-fluid" style="width:8%;" alt="Alternate Text" />
-                            </a>
-                            <a href="#">
-                                <img src="https://images.gr-assets.com/books/1527091700s/960.jpg" class="img-fluid" style="width:8%;" alt="Alternate Text" />
-                            </a>
-                        </span>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="#">More book lists</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-8">
-        <div class="jumbotron">
-            <h5>What will you discover?</h5>
-            <div class="list">
-                <div class="list-inline-item">
-                    <p><small>Because Brian liked…</small></p>
-                    <a href="#">
-                        <img src="https://images.gr-assets.com/books/1480106986m/33917.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
-                    </a>
-                    <a href="#">
-                        <img src="https://images.gr-assets.com/books/1320562005m/4214.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
-                    </a>
-                    <a href="#">
-                        <img src="https://images.gr-assets.com/books/1406383769m/49628.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
-                    </a>
-                    <a href="#">
-                        <img src="https://images.gr-assets.com/books/1479863624m/1618.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
-                    </a>
+<div id="maincontent">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Deciding what to read next?</h5>
+                                <p class="card-text">You’re in the right place. Tell us what titles or genres you’ve enjoyed in the past, and we’ll give you surprisingly insightful recommendations.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">What are your friends reading?</h5>
+                                <p class="card-text">Chances are your friends are discussing their favorite (and least favorite) books on Goodreads.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="list-inline-item">
-                    <img src="https://s.gr-assets.com/assets/home/discovery_arrow.png" alt="Alternate Text" />
-                </div>
-                <div class="list-inline-item">
-                    <p><small>He discovered:</small></p>
-                    <a href="#">
-                        <img src="https://images.gr-assets.com/books/1329421639m/50365.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
-                    </a>
+                <div class="row">
+                    <div class="col">
+                        <div class="container">
+                            <h5>What will you discover?</h5>
+                            <div class="list">
+                                <div class="list-inline-item">
+                                    <p><small>Because Brian liked…</small></p>
+                                    <a href="#">
+                                        <img src="https://images.gr-assets.com/books/1480106986m/33917.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
+                                    </a>
+                                    <a href="#">
+                                        <img src="https://images.gr-assets.com/books/1320562005m/4214.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
+                                    </a>
+                                    <a href="#">
+                                        <img src="https://images.gr-assets.com/books/1406383769m/49628.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
+                                    </a>
+                                    <a href="#">
+                                        <img src="https://images.gr-assets.com/books/1479863624m/1618.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
+                                    </a>
+                                </div>
+                                <div class="list-inline-item">
+                                    <img src="https://s.gr-assets.com/assets/home/discovery_arrow.png" alt="Alternate Text" />
+                                </div>
+                                <div class="list-inline-item">
+                                    <p><small>He discovered:</small></p>
+                                    <a href="#">
+                                        <img src="https://images.gr-assets.com/books/1329421639m/50365.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
+                                    </a>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="list">
+                                <div class="list-inline-item">
+                                    <p><small>Because Shomeret liked…</small></p>
+                                    <a href="#">
+                                        <img src="https://images.gr-assets.com/books/1480106986m/33917.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
+                                    </a>
+                                    <a href="#">
+                                        <img src="https://images.gr-assets.com/books/1320562005m/4214.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
+                                    </a>
+                                    <a href="#">
+                                        <img src="https://images.gr-assets.com/books/1406383769m/49628.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
+                                    </a>
+                                    <a href="#">
+                                        <img src="https://images.gr-assets.com/books/1479863624m/1618.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
+                                    </a>
+                                </div>
+                                <div class="list-inline-item">
+                                    <img src="https://s.gr-assets.com/assets/home/discovery_arrow.png" alt="Alternate Text" />
+                                </div>
+                                <div class="list-inline-item">
+                                    <p><small>She discovered:</small></p>
+                                    <a href="#">
+                                        <img src="https://images.gr-assets.com/books/1329421639m/50365.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <br />
-            <div class="list">
-                <div class="list-inline-item">
-                    <p><small>Because Shomeret liked…</small></p>
-                    <a href="#">
-                        <img src="https://images.gr-assets.com/books/1480106986m/33917.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
-                    </a>
-                    <a href="#">
-                        <img src="https://images.gr-assets.com/books/1320562005m/4214.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
-                    </a>
-                    <a href="#">
-                        <img src="https://images.gr-assets.com/books/1406383769m/49628.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
-                    </a>
-                    <a href="#">
-                        <img src="https://images.gr-assets.com/books/1479863624m/1618.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
-                    </a>
+            <div class="col-md-4">
+                <div class="card" id="card-list">
+                    <div class="card-body">
+                        <h5 class="card-title">Love lists?</h5>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <a href="#" id="list-title">Best Crime & Mystery Books</a>
+                                <p class="card-text" id="books-voters"><small class="text-muted">5,200 books | 12,750 voters</small></p>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-3" id="img-list-item">
+                                        <a href="#">
+                                            <img src="https://images.gr-assets.com/books/1386605169s/17899948.jpg" class="img-fluid" alt="Alternate Text" />
+                                        </a>
+                                    </div>
+                                    <div class="col-md-3" id="img-list-item">
+                                        <a href="#">
+                                            <img src="https://images.gr-assets.com/books/1327868566s/2429135.jpg" class="img-fluid" alt="Alternate Text" />
+                                        </a>
+                                    </div>
+                                    <div class="col-md-3" id="img-list-item">
+                                        <a href="#">
+                                            <img src="https://images.gr-assets.com/books/1391120695s/16299.jpg" class="img-fluid" alt="Alternate Text" />
+                                        </a>
+                                    </div>
+                                    <div class="col-md-3" id="img-list-item">
+                                        <a href="#">
+                                            <img src="https://images.gr-assets.com/books/1527091700s/960.jpg" class="img-fluid" alt="Alternate Text" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <a href="#" id="list-title">Best Books of the 20th Century</a>
+                                <p class="card-text" id="books-voters"><small class="text-muted">7,502 books | 47,617 voters </small></p>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-3" id="img-list-item">
+                                        <a href="#">
+                                            <img src="https://images.gr-assets.com/books/1361975680s/2657.jpg" class="img-fluid" alt="Alternate Text" />
+                                        </a>
+                                    </div>
+                                    <div class="col-md-3" id="img-list-item">
+                                        <a href="#">
+                                            <img src="https://images.gr-assets.com/books/1348990566s/5470.jpg" class="img-fluid" alt="Alternate Text" />
+                                        </a>
+                                    </div>
+                                    <div class="col-md-3" id="img-list-item">
+                                        <a href="#">
+                                            <img src="https://images.gr-assets.com/books/1528221267s/4671.jpg" class="img-fluid" alt="Alternate Text" />
+                                        </a>
+                                    </div>
+                                    <div class="col-md-3" id="img-list-item">
+                                        <a href="#">
+                                            <img src="https://images.gr-assets.com/books/1474154022s/3.jpg" class="img-fluid" alt="Alternate Text" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <a href="#" id="list-title">Best for Book Clubs</a>
+                                <p class="card-text" id="books-voters"><small class="text-muted">4,600 books | 10,300 voters</small></p>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-3" id="img-list-item">
+                                        <a href="#">
+                                            <img src="https://images.gr-assets.com/books/1346100365s/4667024.jpg" class="img-fluid" alt="Alternate Text" />
+                                        </a>
+                                    </div>
+                                    <div class="col-md-3" id="img-list-item">
+                                        <a href="#">
+                                            <img src="https://images.gr-assets.com/books/1484565687s/77203.jpg" class="img-fluid" alt="Alternate Text" />
+                                        </a>
+                                    </div>
+
+                                    <div class="col-md-3" id="img-list-item">
+                                        <a href="#">
+                                            <img src="https://images.gr-assets.com/books/1494428973s/43641.jpg" class="img-fluid" alt="Alternate Text" />
+                                        </a>
+                                    </div>
+
+                                    <div class="col-md-3" id="img-list-item">
+                                        <a href="#">
+                                            <img src="https://images.gr-assets.com/books/1494428973s/43641.jpg" class="img-fluid" alt="Alternate Text" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="card-footer">
+                                <a id="list-title" href="#">More book lists</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="list-inline-item">
-                    <img src="https://s.gr-assets.com/assets/home/discovery_arrow.png" alt="Alternate Text" />
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Are you an author or a publisher? </h5>
+                        <p class="card-text">Gain access to a massive audience of more than 75 million book lovers. Goodreads is a great place to promote your books. </p>
+                        <button class="btn btn-sm">Author program</button>
+                        <button class="btn btn-sm">Advertise</button>
+                    </div>
                 </div>
-                <div class="list-inline-item">
-                    <p><small>She discovered:</small></p>
-                    <a href="#">
-                        <img src="https://images.gr-assets.com/books/1329421639m/50365.jpg" class="img-fluid" style="width:80px; height:136px;" alt="Alternate Text" />
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-4">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Are you an author or a publisher? </h5>
-                <p class="card-text">Gain access to a massive audience of more than 75 million book lovers. Goodreads is a great place to promote your books. </p>
-                <button class="btn btn-sm">Author program</button>
-                <button class="btn btn-sm">Advertise</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container float-left w-75">
-    <h5>Search and browse books</h5>
-    <div class="input-group" style="width:350px;">
-        <input type="text" class="form-control" id="search" placeholder="Title / Author / ISBN" />
-    </div>
-    <br />
-    <div class="row">
-        <div class="col-sm">
-            <div class="row">
-                <a href="#">Art</a>
-            </div>
-            <div class="row">
-                <a href="#">Biography</a>
-            </div>
-            <div class="row">
-                <a href="#">Business</a>
-            </div>
-            <div class="row">
-                <a href="#">Children's</a>
-            </div>
-            <div class="row">
-                <a href="#">Christian</a>
-            </div>
-            <div class="row">
-                <a href="#">Classics</a>
-            </div>
-            <div class="row">
-                <a href="#">Comics</a>
-            </div>
-            <div class="row">
-                <a href="#">Cookbooks</a>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="row">
-                <a href="#">Ebooks</a>
-            </div>
-            <div class="row">
-                <a href="#">Fantasy</a>
-            </div>
-            <div class="row">
-                <a href="#">Fiction</a>
-            </div>
-            <div class="row">
-                <a href="#">Graphic Novels</a>
-            </div>
-            <div class="row">
-                <a href="#">Historical Fiction</a>
-            </div>
-            <div class="row">
-                <a href="#">History</a>
-            </div>
-            <div class="row">
-                <a href="#">Horror</a>
-            </div>
-            <div class="row">
-                <a href="#">Memoir</a>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="row">
-                <a href="#">Music</a>
-            </div>
-            <div class="row">
-                <a href="#">Mystery</a>
-            </div>
-            <div class="row">
-                <a href="#">Nonfiction</a>
-            </div>
-            <div class="row">
-                <a href="#">Poetry</a>
-            </div>
-            <div class="row">
-                <a href="#">Psychology</a>
-            </div>
-            <div class="row">
-                <a href="#">Romance</a>
-            </div>
-            <div class="row">
-                <a href="#">Science</a>
-            </div>
-            <div class="row">
-                <a href="#">Science Fiction</a>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="row">
-                <a href="#">Self Help</a>
-            </div>
-            <div class="row">
-                <a href="#">Sports</a>
-            </div>
-            <div class="row">
-                <a href="#">Thriller</a>
-            </div>
-            <div class="row">
-                <a href="#">Travel</a>
-            </div>
-            <div class="row">
-                <a href="#">Young Adult</a>
-            </div>
-            <div class="row">
-                <a href="#">More genres</a>
             </div>
         </div>
     </div>

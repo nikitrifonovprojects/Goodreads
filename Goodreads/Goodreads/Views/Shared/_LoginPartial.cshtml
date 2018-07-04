@@ -9,39 +9,37 @@
 @if (SignInManager.IsSignedIn(User))
 {
     <form asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
-        <div class="navbar navbar-light bg-transparent">
-            <div class="nav-item">
-                <a class="badge badge-pill" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
-            </div>
-            <div class="nav-item">
-                <button type="submit" class="btn btn-link navbar-btn nav-link"><small>Log out</small></button>
-            </div>
+        <div class="nav-item">
+            <a class="badge badge-pill" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+        </div>
+        <div class="nav-item">
+            <button type="submit" class="btn btn-link navbar-btn nav-link"><small>Log out</small></button>
         </div>
     </form>
 }
 else
 {
-    <div class="navbar navbar-right bg-transparent">
-        <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
+    <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
+        <div class="nav-item">
             <div class="form-row">
-                <div class="col-5">
-                    <div class="align-content-sm-end">
+                <div class="col-md-5">
+                    <div>
                         <input type="email" asp-for="Email" class="form-control-sm is-invalid" id="validationemail" placeholder="Email Address" required />
                         <span asp-validation-for="Email" class="text-danger"></span>
                     </div>
                 </div>
-                <div class="col-5">
+                <div class="col-md-5">
                     <div>
                         <input type="password" asp-for="Password" class="form-control-sm is-invalid" id="validationpassword" placeholder="Password" required />
                         <span asp-validation-for="Password" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="col">
-                    <button type="submit" class="btn-sm btn">Sign In</button>
+                    <button type="submit" class="btn btn-sm" id="signinbutton">Sign In</button>
                 </div>
             </div>
             <div class="form-row">
-                <div class="col-5">
+                <div class="col-md-5">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" asp-for="RemmemberMe" id="check" checked>
                         <label class="form-check-label" for="check">
@@ -49,12 +47,12 @@ else
                         </label>
                     </div>
                 </div>
-                <div class="col-5">
+                <div class="col-md-5">
                     <a asp-controller="Home" asp-action="ForgottenPassword"><small class="text-muted">Forgot it?</small></a>
                 </div>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
     @section Scripts {
         @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
     }
