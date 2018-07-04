@@ -66,8 +66,17 @@
     padding-right: 0;
 }
 
+#arrow {
+    margin: 6rem 10px 0 0;
+    
+}
+
 #card-list {
     padding-left: 0;
+}
+
+#search {
+    width: 21rem;
 }
 /* QR code generator */
 #qrCode {
