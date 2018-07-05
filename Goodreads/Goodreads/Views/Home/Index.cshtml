@@ -4,7 +4,7 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div id="navigation">
+<div id="navigationcontent">
     <div class="container">
         <div class="navbar navbar-expand-lg navbar-light bg-transparent">
             <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
@@ -78,81 +78,112 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="container">
+                <div class="container" id="discoverbox">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-10">
                             <div class="row">
                                 <h5>What will you discover?</h5>
                             </div>
                             <div class="row">
-                                <div class="col-md-8 col-1">
-                                    <p><small>Because Brian liked…</small></p>
-                                    <div class="row">
-                                        <div class="col-md-3 col-6" id="img-list-item">
-                                            <a href="#">
-                                                <img src="https://images.gr-assets.com/books/1480106986m/33917.jpg" class="img-fluid" alt="Alternate Text" />
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3 col-6" id="img-list-item">
-                                            <a href="#">
-                                                <img src="https://images.gr-assets.com/books/1320562005m/4214.jpg" class="img-fluid" alt="Alternate Text" />
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3 col-6" id="img-list-item">
-                                            <a href="#">
-                                                <img src="https://images.gr-assets.com/books/1406383769m/49628.jpg" class="img-fluid" alt="Alternate Text" />
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3 col-6" id="img-list-item">
-                                            <a href="#">
-                                                <img src="https://images.gr-assets.com/books/1479863624m/1618.jpg" class="img-fluid" alt="Alternate Text" />
-                                            </a>
+                                <div class="col-md-9 col-4">
+                                    <p><small>Because Deborah liked…</small></p>
+                                </div>
+                                <div class="col-md-3 col-2">
+                                    <p><small>She discovered:</small></p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8 col-3">
+                                        <div class="row">
+                                            <div class="col-md-3 col-6" id="img-dicover-item">
+                                                <a href="#">
+                                                    <img src="https://images.gr-assets.com/books/1388800064m/9648068.jpg" class="img-fluid" alt="Alternate Text" />
+                                                </a>
+                                            </div>
+                                            <div class="col-md-3 col-6" id="img-dicover-item">
+                                                <a href="#">
+                                                    <img src="https://images.gr-assets.com/books/1408500437m/7094569.jpg" class="img-fluid" alt="Alternate Text" />
+                                                </a>
+                                            </div>
+                                            <div class="col-md-3 col-6" id="img-dicover-item">
+                                                <a href="#">
+                                                    <img src="https://images.gr-assets.com/books/1264898635m/7157310.jpg" class="img-fluid" alt="Alternate Text" />
+                                                </a>
+                                            </div>
+                                            <div class="col-md-3 col-6" id="img-dicover-item">
+                                                <a href="#">
+                                                    <img src="https://images.gr-assets.com/books/1265814659m/7716140.jpg" class="img-fluid" alt="Alternate Text" />
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-1 col-1" id="img-list-item">
-                                    <a href="#">
-                                        <img id="arrow" src="https://s.gr-assets.com/assets/home/discovery_arrow.png" class="img-fluid" alt="Alternate Text" />
-                                    </a>
-                                </div>
-                                <div class="col-md-3 col-6">
-                                    <p><small>He discovered:</small></p>
-                                    <div class="row">
-                                        <div class="col-md-7 col-1" id="img-list-item">
-                                            <a href="#">
-                                                <img src="https://images.gr-assets.com/books/1329421639m/50365.jpg" class="img-fluid" alt="Alternate Text" />
-                                            </a>
-                                        </div>
-                                        <div class="col-md-5 col-5">
-                                            <p class="small"> Zombies, Post Apocalyptic, Dystopia, Urban Fantasy</p>
+                                    <div class="col-md-1 col-1" id="img-list-item">
+                                        <a href="#">
+                                            <img id="arrow" src="https://s.gr-assets.com/assets/home/discovery_arrow.png" class="img-fluid" alt="Alternate Text" />
+                                        </a>
+                                    </div>
+                                    <div class="col-md-3 col-3">
+                                        <div class="row">
+                                            <div class="col-md-7 col-9" id="img-list-item">
+                                                <a href="#">
+                                                    <img src="https://images.gr-assets.com/books/1388716938m/8051458.jpg" class="img-fluid" alt="Alternate Text" />
+                                                </a>
+                                            </div>
+                                            <div class="col-md-5 col-3">
+                                                <p class="small">Zombies, Post Apocalyptic, Dystopia, Urban Fantasy</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="list-inline">
-                                <div class="list-inline-item">
-                                    <p><small>Because Shomeret liked…</small></p>
-                                    <a href="#">
-                                        <img src="https://images.gr-assets.com/books/1480106986m/33917.jpg" class="img-fluid" alt="Alternate Text" />
-                                    </a>
-                                    <a href="#">
-                                        <img src="https://images.gr-assets.com/books/1320562005m/4214.jpg" class="img-fluid" alt="Alternate Text" />
-                                    </a>
-                                    <a href="#">
-                                        <img src="https://images.gr-assets.com/books/1406383769m/49628.jpg" class="img-fluid" alt="Alternate Text" />
-                                    </a>
-                                    <a href="#">
-                                        <img src="https://images.gr-assets.com/books/1479863624m/1618.jpg" class="img-fluid" alt="Alternate Text" />
-                                    </a>
+                            <div class="row">
+                                <div class="col-md-9 col-4">
+                                    <p><small>Because Brian liked…</small></p>
                                 </div>
-                                <div class="list-inline-item">
-                                    <img src="https://s.gr-assets.com/assets/home/discovery_arrow.png" alt="Alternate Text" />
+                                <div class="col-md-3 col-2">
+                                    <p><small>He discovered:</small></p>
                                 </div>
-                                <div class="list-inline-item">
-                                    <p><small>She discovered:</small></p>
-                                    <a href="#">
-                                        <img src="https://images.gr-assets.com/books/1329421639m/50365.jpg" class="img-fluid" alt="Alternate Text" />
-                                    </a>
+                                <div class="row">
+                                    <div class="col-md-8 col-3">
+                                        <div class="row">
+                                            <div class="col-md-3 col-6" id="img-dicover-item">
+                                                <a href="#">
+                                                    <img src="https://images.gr-assets.com/books/1480106986m/33917.jpg" class="img-fluid" alt="Alternate Text" />
+                                                </a>
+                                            </div>
+                                            <div class="col-md-3 col-6" id="img-dicover-item">
+                                                <a href="#">
+                                                    <img src="https://images.gr-assets.com/books/1320562005m/4214.jpg" class="img-fluid" alt="Alternate Text" />
+                                                </a>
+                                            </div>
+                                            <div class="col-md-3 col-6" id="img-dicover-item">
+                                                <a href="#">
+                                                    <img src="https://images.gr-assets.com/books/1406383769m/49628.jpg" class="img-fluid" alt="Alternate Text" />
+                                                </a>
+                                            </div>
+                                            <div class="col-md-3 col-6" id="img-dicover-item">
+                                                <a href="#">
+                                                    <img src="https://images.gr-assets.com/books/1479863624m/1618.jpg" class="img-fluid" alt="Alternate Text" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1 col-1" id="img-list-item">
+                                        <a href="#">
+                                            <img id="arrow" src="https://s.gr-assets.com/assets/home/discovery_arrow.png" class="img-fluid" alt="Alternate Text" />
+                                        </a>
+                                    </div>
+                                    <div class="col-md-3 col-3">
+                                        <div class="row">
+                                            <div class="col-md-7 col-9" id="img-list-item">
+                                                <a href="#">
+                                                    <img src="https://images.gr-assets.com/books/1329421639m/50365.jpg" class="img-fluid" alt="Alternate Text" />
+                                                </a>
+                                            </div>
+                                            <div class="col-md-5 col-3">
+                                                <p class="small">Contemporary, Classics</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -256,7 +287,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="card-footer">
+                            <div class="col">
                                 <a id="list-title" href="#">More book lists</a>
                             </div>
                         </div>
@@ -266,8 +297,8 @@
                     <div class="card-body">
                         <h5 class="card-title">Are you an author or a publisher? </h5>
                         <p class="card-text">Gain access to a massive audience of more than 75 million book lovers. Goodreads is a great place to promote your books. </p>
-                        <button class="btn btn-sm">Author program</button>
-                        <button class="btn btn-sm">Advertise</button>
+                        <button class="btn btn-sm btn-outline-secondary">Author program</button>
+                        <button class="btn btn-sm btn-outline-secondary">Advertise</button>
                     </div>
                 </div>
             </div>
@@ -275,7 +306,7 @@
     </div>
 </div>
 <br />
-<div id="searchandbrowse">
+<div id="searchandbrowsecontent">
     <div class="container">
         <div class="row">
             <div class="col-md-8">
@@ -292,7 +323,7 @@
                             </div>
                             <br />
                             <div class="row">
-                                <div class="col-md-3">
+                                <div class="col-md-3 col-3">
                                     <div class="row">
                                         <a id="list-title" href="#">Art</a>
                                     </div>
@@ -318,7 +349,7 @@
                                         <a id="list-title" href="#">Cookbooks</a>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3 col-3">
                                     <div class="row">
                                         <a id="list-title" href="#">Ebooks</a>
                                     </div>
@@ -344,7 +375,7 @@
                                         <a id="list-title" href="#">Memoir</a>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3 col-3">
                                     <div class="row">
                                         <a id="list-title" href="#">Music</a>
                                     </div>
@@ -370,7 +401,7 @@
                                         <a id="list-title" href="#">Science Fiction</a>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-3 col-3">
                                     <div class="row">
                                         <a id="list-title" href="#">Self Help</a>
                                     </div>
@@ -391,6 +422,365 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<div id="quotescontent">
+    <div class="container">
+        <h5>Quotes</h5>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-8 col-8">
+                        <div id="carouselquotes" class="carousel slide carousel-fade" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <a href="#">
+                                                <img src="https://images.gr-assets.com/authors/1193930952p2/61105.jpg" class="align-content-start" alt="Alternate Text" />
+                                            </a>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <p>“Don't cry because it's over, smile because it happened.”</p>
+                                            ―
+                                            <a class="author" href="#">Dr. Seuss</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <a href="#">
+                                                <img src="https://images.gr-assets.com/quotes/1511992603p2/8630.jpg" class="align-content-start" alt="Alternate Text" />
+                                            </a>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <p>“I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.”</p>
+                                            ―
+                                            <a class="author" href="#">Marilyn Monroe</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <a href="#">
+                                                <img src="https://images.gr-assets.com/authors/1521044377p2/3565.jpg" class="align-content-start" alt="Alternate Text" />
+                                            </a>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <p>“Be yourself; everyone else is already taken.”</p>
+                                            ―
+                                            <a class="author" href="#">Oscar Wilde</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <a href="#">
+                                                <img src="https://images.gr-assets.com/authors/1429114964p2/9810.jpg" class="align-content-start" alt="Alternate Text" />
+                                            </a>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <p>“Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.”</p>
+                                            ―
+                                            <a class="author" href="#">Albert Einstein</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <a href="#">
+                                                <img src="https://images.gr-assets.com/authors/1315160559p2/22302.jpg" class="align-content-start" alt="Alternate Text" />
+                                            </a>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <p>“So many books, so little time.”</p>
+                                            ―
+                                            <a class="author" href="#">Frank Zappa</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <a href="#">
+                                                <img src="https://images.gr-assets.com/authors/1331977133p2/5768330.jpg" class="align-content-start" alt="Alternate Text" />
+                                            </a>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <p>“Be who you are and say what you feel, because those who mind don't matter, and those who matter don't mind.”</p>
+                                            ―
+                                            <a class="author" href="#">Bernard M. Baruch</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <a href="#">
+                                                <img src="https://images.gr-assets.com/authors/1197881416p2/13755.jpg" class="align-content-start" alt="Alternate Text" />
+                                            </a>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <p>“A room without books is like a body without a soul.”</p>
+                                            ―
+                                            <a class="author" href="#">Marcus Tullius Cicero</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <a href="#">
+                                                <img src="https://images.gr-assets.com/authors/1356810912p2/5810891.jpg" class="align-content-start" alt="Alternate Text" />
+                                            </a>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <p>“Be the change that you wish to see in the world.”</p>
+                                            ―
+                                            <a class="author" href="#">Mahatma Gandhi</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col 4">
+                        <div class="row">
+                            <a id="list-title" href="#">Best quotes</a>
+                        </div>
+                        <div class="row">
+                            <a id="list-title" href="#">Love quotes</a>
+                        </div>
+                        <div class="row">
+                            <a id="list-title" href="#">Inspirational quotes</a>
+                        </div>
+                        <div class="row">
+                            <a id="list-title" href="#">Funny quotes</a>
+                        </div>
+                        <div class="row">
+                            <a id="list-title" href="#">Motivational quotes</a>
+                        </div>
+                        <div class="row">
+                            <a id="list-title" href="#">Life quotes</a>
+                        </div>
+                        <div class="row">
+                            <a id="list-title" href="#">Friends quotes</a>
+                        </div>
+                        <div class="row">
+                            <a id="list-title" href="#">Positive quotes</a>
+                        </div>
+                        <div class="row">
+                            <a id="list-title" href="#">More quotes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<div id="dealscontent">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-8">
+                        <a id="list-title" href="#">
+                            Goodreads Deals: Read more with up to 80% off ebook deals
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a id="list-title" href="#">
+                            Subscribe for free
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<br />
+<div id="homepagedealscontent">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-3">
+                            <div class="row">
+                                <a href="#">
+                                    <img id="img-deals" src="https://images.gr-assets.com/books/1519713652l/36987441.jpg" class="img-fluid" alt="Alternate Text" />
+                                </a>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <span>$0.99</span>
+                                    <s>$1.99</s>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-3">
+                            <div class="row">
+                                <a href="#">
+                                    <img id="img-deals" src="https://images.gr-assets.com/books/1482943254l/7797909.jpg" class="img-fluid" alt="Alternate Text" />
+                                </a>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <span>$2.99</span>
+                                    <s>$12.99</s>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-3">
+                            <div class="row">
+                                <a href="#">
+                                    <img id="img-deals" src="https://images.gr-assets.com/books/1527299127l/40212477.jpg" class="img-fluid" alt="Alternate Text" />
+                                </a>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <span>$2.99</span>
+                                    <s>$7.99</s>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-3">
+                            <div class="row">
+                                <a href="#">
+                                    <img id="img-deals" src="https://images.gr-assets.com/books/1499672581l/35638058.jpg" class="img-fluid" alt="Alternate Text" />
+                                </a>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <span>$1.99</span>
+                                    <s>$8.99</s>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-6">
+                            <div class="row">
+                                <a id="list-title" href="#"><small>Bestsellers ebook deals</small></a>
+                            </div>
+                            <div class="row">
+                                <a id="list-title" href="#"><small>Romance ebook deals</small></a>
+                            </div>
+                            <div class="row">
+                                <a id="list-title" href="#"><small>Mystery & Thrillers ebook deals</small></a>
+                            </div>
+                            <div class="row">
+                                <a id="list-title" href="#"><small>Fantasy & Science Fiction ebook deals</small></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-6">
+                            <div class="row">
+                                <a id="list-title" href="#"><small>Fiction ebook deals</small></a>
+                            </div>
+                            <div class="row">
+                                <a id="list-title" href="#"><small>Nonfiction ebook deals</small></a>
+                            </div>
+                            <div class="row">
+                                <a id="list-title" href="#"><small>Today's ebook deals</small></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<div id="awardscontent">
+    <div class="container">
+        <div class="row">
+            <h6>Goodreads Choice Awards: The Best Books 2017</h6>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-3 col-3">
+                        <a href="#">
+                            <img src="https://s.gr-assets.com/assets/award/2017/choice-logo-medium-284616a5fbdf1442f127ca334987ccad.png" class="img-fluid" alt="Alternate Text" />
+                        </a>
+                    </div>
+                    <div class="col-md-5 col-5">
+                        <div class="row">
+                            <a id="list-title" href="#">Best Books 2017</a>
+                        </div>
+                        <div class="row">
+                            <a id="list-title" href="#">Best Fiction</a>
+                        </div>
+                        <div class="row">
+                            <a id="list-title" href="#">Best Mystery & Thriller</a>
+                        </div>
+                        <div class="row">
+                            <a id="list-title" href="#">Best Historical Fiction</a>
+                        </div>
+                        <div class="row">
+                            <a id="list-title" href="#">Best Fantasy</a>
+                        </div>
+                        <div class="row">
+                            <a id="list-title" href="#">Best Romance</a>
+                        </div>
+                        <div class="row">
+                            <a id="list-title" href="#">Best Science Fiction</a>
+                        </div>
+                        <div class="row">
+                            <a id="list-title" href="#">Best Horror</a>
+                        </div>
+                        <div class="row">
+                            <a id="list-title" href="#">Best Humor</a>
+                        </div>
+                        <div class="row">
+                            <a id="list-title" href="#">Best Nonfiction</a>
+                        </div>
+                        <div class="row">
+                            <a id="list-title" href="#">Best Memoir & Autobiography</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col 4">
+                        <div class="row">
+                            <a id="list-title" href="#">Best History & Biography</a>
+                        </div>
+                        <div class="row">
+                            <a id="list-title" href="#">Best Science & Technology</a>
+                        </div>
+                        <div class="row">
+                            <a id="list-title" href="#">Best Food & Cookbooks</a>
+                        </div>
+                        <div class="row">
+                            <a id="list-title" href="#">Best Graphic Novels & Comics</a>
+                        </div>
+                        <div class="row">
+                            <a id="list-title" href="#">Best Poetry</a>
+                        </div>
+                        <div class="row">
+                            <a id="list-title" href="#">Best Debut Goodreads Author</a>
+                        </div>
+                        <div class="row">
+                            <a id="list-title" href="#">Best Young Adult Fiction</a>
+                        </div>
+                        <div class="row">
+                            <a id="list-title" href="#">Best Young Adult Fantasy & Science Fiction</a>
+                        </div>
+                        <div class="row">
+                            <a id="list-title" href="#">Best Middle Grade & Children's</a>
+                        </div>
+                        <div class="row">
+                            <a id="list-title" href="#">Best Picture Books</a>
                         </div>
                     </div>
                 </div>

@@ -10,7 +10,7 @@
 }
 
 
-#navigation {
+#navigationcontent {
     background-image: url("https://s.gr-assets.com/assets/home/masthead_background.jpg");
 }
 
@@ -58,7 +58,7 @@
 
 #list-title {
     color: #00635d;
-    font-size: 15px;
+    font-size: 1rem;
 }
 
 #img-list-item {
@@ -66,9 +66,16 @@
     padding-right: 0;
 }
 
+#img-dicover-item {
+    padding-right: 0;
+}
+
+#discoverbox {
+    background-color: #f4f2e9;
+}
+
 #arrow {
-    margin: 6rem 10px 0 0;
-    
+    margin: 3rem 1rem 0 0;
 }
 
 #card-list {
@@ -77,6 +84,10 @@
 
 #search {
     width: 21rem;
+}
+
+#img-deals {
+    width: 7.5rem;
 }
 /* QR code generator */
 #qrCode {
