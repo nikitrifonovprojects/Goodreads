@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Goodreads</title>
+    <title>@ViewData["Title"] - Goodreads — Share book recommendations with your friends, join book clubs, answer trivia</title>
 
     <environment include="Development">
         <link href="~/lib/Font-Awesome/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet" />
@@ -19,11 +19,13 @@
     </environment>
 </head>
 <body>
-    @RenderBody()
-    <hr />
-    <footer>
-        <p>&copy; 2018 - Goodreads</p>
-    </footer>
+    <div class="container-fluid body-content" id="main-body">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; 2018 - Goodreads</p>
+        </footer>
+    </div>
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
